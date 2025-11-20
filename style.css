@@ -46,7 +46,6 @@ margin-top: -50px
   gap: 12px;
   flex-wrap: wrap;
 }
-
 .board {
   display: flex;
   flex-wrap: wrap;
