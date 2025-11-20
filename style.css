@@ -100,7 +100,6 @@ transform: scale(1);
   border-radius: 10px;
   cursor: pointer;
 }
-
 .cell:focus {
   outline: 3px solid #0a7;
   outline-offset: 2px;
