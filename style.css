@@ -141,8 +141,6 @@ transform: scale(1);
   box-shadow: 0 0 0 4px rgba(5,129,214,0.18), 0 6px 18px rgba(0,0,0,0.12);
   transform: translateY(-2px) scale(1.02);
 }
-
-
 /* Temporär visuell mullvad , byt gärna mot egen grafik. */
 .cell .mole {
   width: 65%;
