@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gap: 8px;
+}
+
+body {
+  margin-top: 100px;
+  display: grid;
+  place-items: center;
+  font-family: sans-serif;
+  background: linear-gradient(270deg, #e72626, #feca57, #d11dbc, #5f27cd);
+  background-size: 800% 800%;
+  animation: gradientMove 10s ease infinite;
+  
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+font-size: 3rem;
+font-weight: 900;
+text-align: center;
+background: linear-gradient(90deg, #04db1d, #03d7f7, #531dd1, #4b27cd);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+margin-bottom: 24px;
+margin-top: -50px
+}
+
+.container {
+  width: min(90vw, 840px);
+  padding: 16px;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  width: min(90vmin, 360px);
+  aspect-ratio: 1 / 1;
+  border: 2px solid #222;
+  border-radius: 12px;
+  padding: var(--gap);
+}
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  column-gap: 12px;
+  font-weight: 600;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.stats span {
+  display: flex;
+  align-items: center;
+}
+
+#score, #time, #misses {
+background: linear-gradient(135deg, #1dd1a1, #10ac84);
+color: white;
+font-weight: bold;
+padding: 10px 20px;
+border-radius: 12px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+text-align: center;
+min-width: 50px;
+transition: transform 0.2s;
+width: 110px; 
+height: 50px;
+}
+
+#score {
+transform: scale(1);
+}
+
+.cell {
+  flex: 1 0 calc(33.333% - var(--gap));
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  background: #f2f2f2;
+  border: 2px solid #bbb;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cell:focus {
+  outline: 3px solid #0a7;
+  outline-offset: 2px;
+}
+
+/* Prefer :focus-visible for keyboard focus, keep a strong visible style */
+.cell:focus-visible {
+  outline: 4px solid #06a;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.12);
+}
+
+.controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1dd1a1, #10ac84);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  min-width: 50px;
+  transition: transform 0.2s;
+  min-width: 88px;
+  width: 110px; 
+  height: 50px;
+  margin-bottom: 12px;
+}
+.controls button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.controls button:focus-visible {
+  outline: none;
+  border-color: #0581d6; 
+  box-shadow: 0 0 0 4px rgba(5,129,214,0.18), 0 6px 18px rgba(0,0,0,0.12);
+  transform: translateY(-2px) scale(1.02);
+}
+
+
+/* Temporär visuell mullvad , byt gärna mot egen grafik. */
+.cell .mole {
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 60%,
+    #5b3b1a,
+    #2d1a0a 60%,
+    #000 100%
+  );
+}
+
+@media (min-width: 768px) {
+  :root { --gap: 12px; }
+  body {
+    font-size: 18px;
+  }
+  .container {
+    padding: 20px;
+  }
+  .board {
+    width: min(80vmin, 640px);
+  }
+  .cell {
+    border-radius: 12px;
+  
+  }
+}
+
+
