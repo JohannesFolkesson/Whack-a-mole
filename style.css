@@ -71,7 +71,6 @@ margin-top: -50px
   display: flex;
   align-items: center;
 }
-
 #score, #time, #misses {
 background: linear-gradient(135deg, #1dd1a1, #10ac84);
 color: white;
