@@ -164,6 +164,9 @@ transform: scale(1);
   .container {
     padding: 20px;
   }
+  h1 {
+    
+  }
   .board {
     width: min(80vmin, 640px);
   }
