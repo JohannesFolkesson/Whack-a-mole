@@ -112,7 +112,6 @@ transform: scale(1);
   outline-offset: 3px;
   box-shadow: 0 0 0 3px rgba(0,102,204,0.12);
 }
-
 .controls button {
   display: inline-flex;
   align-items: center;
