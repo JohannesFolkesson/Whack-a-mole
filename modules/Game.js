@@ -104,7 +104,6 @@ export class Game {
       this.spawnMole();
     }, baseInterval)
 
-
   }
   spawnMole() {
     const cells = Array.from(this.boardEl.querySelectorAll('.cell'));
