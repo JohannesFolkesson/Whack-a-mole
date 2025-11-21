@@ -3,11 +3,11 @@
 }
 
 :root {
-  --gap: 8px;
+  --gap: 6px;
 }
 
 body {
-  margin-top: 100px;
+  margin-top: 28px;
   display: grid;
   place-items: center;
   font-family: sans-serif;
@@ -91,6 +91,8 @@ transform: scale(1);
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
+  position: relative;
+  overflow: visible;
   background: #f2f2f2;
   border: 2px solid #bbb;
   border-radius: 10px;
@@ -100,7 +102,7 @@ transform: scale(1);
   outline: 3px solid #0a7;
   outline-offset: 2px;
 }
-/* Prefer :focus-visible for keyboard focus, keep a strong visible style */
+
 .cell:focus-visible {
   outline: 4px solid #06a;
   outline-offset: 3px;
@@ -134,23 +136,132 @@ transform: scale(1);
   box-shadow: 0 0 0 4px rgba(5,129,214,0.18), 0 6px 18px rgba(0,0,0,0.12);
   transform: translateY(-2px) scale(1.02);
 }
-/* Temporär visuell mullvad , byt gärna mot egen grafik. */
+
 .cell .mole {
-  width: 65%;
-  height: 65%;
+  position: relative;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 60%,
-    #5b3b1a,
-    #2d1a0a 60%,
-    #000 100%
-  );
+  background-image: url('./modules/image/diglett.jpg'), radial-gradient(#6b3e20);
+  background-size: contain, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.45), inset 0 -6px 12px rgba(0,0,0,0.25);
+  transform-origin: 50% 100%;
+  transition: transform 140ms ease;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,0.45));
+  animation: molePop 520ms cubic-bezier(.2,.9,.3,1);
+}
+
+@keyframes molePop {
+  0% { transform: translateY(28%) scale(0.86); }
+  55% { transform: translateY(-2%) scale(1.04); }
+  80% { transform: translateY(0) scale(0.98); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 420px) {
+  :root { --gap: 4px; }
+
+  body {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .container {
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin-top: -6px;
+    line-height: 1.1;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    margin-top: -8px;
+    position: relative;
+  }
+
+  .controls button {
+    width: 100%;
+    max-width: none;
+    padding: 10px 14px;
+    height: 46px;
+    font-size: 16px;
+  }
+
+  .board {
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    border-width: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cell {
+    border-width: 1px;
+    border-radius: 8px;
+  }
+
+  #score, #time, #misses {
+    width: auto;
+    padding: 8px 12px;
+    height: 44px;
+    min-width: unset;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 446px) and (max-width: 775px) {
+  body {
+    margin-top: 28px;
+  }
+
+  .container {
+    width: min(94vw, 720px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .board {
+    margin-left: auto;
+    margin-right: auto;
+    width: min(86vmin, 640px);
+    max-width: 640px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
 @media (min-width: 768px) {
   :root { --gap: 12px; }
   body {
     font-size: 18px;
+    margin-top: 100px;
   }
   .container {
     padding: 20px;
