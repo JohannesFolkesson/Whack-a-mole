@@ -127,7 +127,6 @@ export class Game {
   }
 
   reset() {
-
     if(this._tickId) {
       clearInterval(this._tickId)
       this._tickId = null;
