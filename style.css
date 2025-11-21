@@ -159,7 +159,6 @@ transform: scale(1);
   80% { transform: translateY(0) scale(0.98); }
   100% { transform: translateY(0) scale(1); }
 }
-
 @media (max-width: 420px) {
   :root { --gap: 4px; }
 
