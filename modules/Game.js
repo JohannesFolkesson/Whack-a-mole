@@ -110,7 +110,7 @@ export class Game {
     const freeCells = cells.filter(cell => !cell.classList.contains('has-mole'))
     if(freeCells.length === 0) return;
     const cell = freeCells[Math.floor(Math.random() * freeCells.length)];
-    const minTTL = 400, maxTTL = 800;
+    const minTTL = 500, maxTTL = 800;
     const ttl = Math.max(minTTL, maxTTL * (0.5 + this.state.timeLeft / this.duration));
     
     const mole = new Mole(cell, ttl);
