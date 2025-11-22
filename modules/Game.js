@@ -93,7 +93,6 @@ export class Game {
       }
     }, 1000);
 
-
     let baseInterval = 1200;
     this._spawnId = setInterval(() => {
       if(!this.state.running) return;
