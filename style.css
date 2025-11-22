@@ -191,7 +191,6 @@ transform: scale(1);
     height: 46px;
     font-size: 16px;
   }
-
   .board {
     max-width: none;
     aspect-ratio: 1 / 1;
