@@ -1,6 +1,5 @@
 import { Mole } from "./mole.js";
 
-
 // Centrera eventhantering via delegering på brädet (se vecko-materialet om
 // addEventListener & bubbling).
 
