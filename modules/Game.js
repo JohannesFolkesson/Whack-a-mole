@@ -9,10 +9,9 @@ export class Game {
     this.scoreEl = scoreEl;
     this.timeEl = timeEl;
     this.missesEl = missesEl;
-
     this.gridSize = 3;
     this.duration = 60; // sekunder
-
+   
     this.state = {
       score: 0,
       misses: 0,
