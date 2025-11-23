@@ -148,7 +148,6 @@ export class Game {
 
 
   handleBoardClick(e) {
-
     if(!this.state.running) return;
     const cell = e.target.closest('.cell')
     if(!cell || !this.boardEl.contains(cell)) return;
