@@ -57,7 +57,6 @@ export class Game {
     cells.forEach(cell => { cell.tabIndex = 0; });
   }
 
-  // Set the end message element (optional, passed via constructor in main)
   createGrid(size = 3) {
     this.boardEl.innerHTML = '';
     for (let i = 0; i < size * size; i++) {
@@ -122,7 +121,7 @@ export class Game {
         this.updateHud();
       }
     });
-    // Increment appeared counter when a mole is spawned and shown
+  
     this.state.appeared++;
     this.updateHud();
   }
