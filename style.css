@@ -55,6 +55,11 @@ margin-top: -50px
   border: 2px solid #222;
   border-radius: 12px;
   padding: var(--gap);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
 }
 .stats {
   display: flex;
@@ -69,7 +74,7 @@ margin-top: -50px
   display: flex;
   align-items: center;
 }
-#score, #time, #misses {
+#score, #time, #misses, #appeared{
 background: linear-gradient(135deg, #1dd1a1, #10ac84);
 color: white;
 font-weight: bold;

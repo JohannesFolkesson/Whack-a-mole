@@ -4,17 +4,19 @@ import { Mole } from "./mole.js";
 // addEventListener & bubbling).
 
 export class Game {
-  constructor({ boardEl, scoreEl, timeEl, missesEl }) {
+  constructor({ boardEl, scoreEl, timeEl, missesEl, appearedEl }) {
     this.boardEl = boardEl;
     this.scoreEl = scoreEl;
     this.timeEl = timeEl;
     this.missesEl = missesEl;
+    this.appearedEl = appearedEl;
     this.gridSize = 3;
     this.duration = 60; // sekunder
    
     this.state = {
       score: 0,
       misses: 0,
+      appeared: 0,
       timeLeft: this.duration,
       running: false
     };
@@ -22,7 +24,6 @@ export class Game {
     this._tickId = null;
     this._spawnId = null;
     this._activeMoles = new Set();
-
     this.handleBoardClick = this.handleBoardClick.bind(this);
   }
 
@@ -73,6 +74,7 @@ export class Game {
     this.state.running = true;
     this.state.score = 0;
     this.state.misses = 0;
+    this.state.appeared = 0;
     this.state.timeLeft = this.duration;
     this.updateHud();
 
@@ -119,6 +121,9 @@ export class Game {
         this.updateHud();
       }
     });
+    // Increment appeared counter when a mole is spawned and shown
+    this.state.appeared++;
+    this.updateHud();
   }
 
   reset() {
@@ -135,6 +140,7 @@ export class Game {
     this._activeMoles.clear();
     this.state.score = 0;
     this.state.misses = 0;
+    this.state.appeared = 0;
     this.state.timeLeft = this.duration;
     this.state.running = false;
     this.updateHud();
@@ -163,5 +169,6 @@ export class Game {
     if (this.scoreEl) this.scoreEl.textContent = `Poäng: ${this.state.score}`;
     if (this.missesEl) this.missesEl.textContent = `Missar: ${this.state.misses}`;
     if (this.timeEl) this.timeEl.textContent = `Tid: ${this.state.timeLeft}`;
+    if (this.appearedEl) this.appearedEl.textContent = `Moles: ${this.state.appeared}`;
   }
 }
