@@ -9,7 +9,7 @@ Kort:
 
 Så spelar du:
 - Klicka `Starta` för att börja.
-- Klicka på mullvadar för poäng.
+- Klicka på mullvadar för att få poäng.
 - Klicka fel = miss.
 - Klicka `Återställ` för att nollställa spelet.
 - Du kan också tabba till en cell och använda `Enter` eller `Space` för att träffa.

@@ -75,6 +75,7 @@ margin-top: -50px
 .stats span {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 #score, #time, #misses, #appeared{
 background: linear-gradient(135deg, #1dd1a1, #10ac84);
@@ -89,6 +90,7 @@ transition: transform 0.2s;
 width: 110px; 
 height: 50px;
 }
+
 
 #score {
 transform: scale(1);

@@ -167,9 +167,9 @@ export class Game {
   }
 
   updateHud() {
-    if (this.scoreEl) this.scoreEl.textContent = `Poäng: ${this.state.score}`;
-    if (this.missesEl) this.missesEl.textContent = `Missar: ${this.state.misses}`;
-    if (this.timeEl) this.timeEl.textContent = `Tid: ${this.state.timeLeft}`;
-    if (this.appearedEl) this.appearedEl.textContent = `Visade: ${this.state.appeared}`;
+    if (this.scoreEl) this.scoreEl.textContent = `Whacks: ${this.state.score}`;
+    if (this.missesEl) this.missesEl.textContent = `Misses: ${this.state.misses}`;
+    if (this.timeEl) this.timeEl.textContent = `Time: ${this.state.timeLeft}`;
+    if (this.appearedEl) this.appearedEl.textContent = `Moles: ${this.state.appeared}`;
   }
 }
