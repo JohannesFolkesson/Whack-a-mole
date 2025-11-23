@@ -94,6 +94,7 @@ height: 50px;
 #score {
 transform: scale(1);
 }
+
 .cell {
   flex: 1 0 calc(33.333% - var(--gap));
   aspect-ratio: 1 / 1;
