@@ -57,6 +57,7 @@ export class Game {
     cells.forEach(cell => { cell.tabIndex = 0; });
   }
 
+  // Set the end message element (optional, passed via constructor in main)
   createGrid(size = 3) {
     this.boardEl.innerHTML = '';
     for (let i = 0; i < size * size; i++) {
@@ -146,6 +147,7 @@ export class Game {
     this.updateHud();
   }
 
+
   handleBoardClick(e) {
 
     if(!this.state.running) return;
@@ -169,6 +171,6 @@ export class Game {
     if (this.scoreEl) this.scoreEl.textContent = `Poäng: ${this.state.score}`;
     if (this.missesEl) this.missesEl.textContent = `Missar: ${this.state.misses}`;
     if (this.timeEl) this.timeEl.textContent = `Tid: ${this.state.timeLeft}`;
-    if (this.appearedEl) this.appearedEl.textContent = `Moles: ${this.state.appeared}`;
+    if (this.appearedEl) this.appearedEl.textContent = `Visade: ${this.state.appeared}`;
   }
 }

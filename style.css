@@ -61,6 +61,8 @@ margin-top: -50px
   border: 1px solid rgba(255,255,255,0.18);
   box-shadow: 0 6px 24px rgba(0,0,0,0.12);
 }
+
+
 .stats {
   display: flex;
   align-items: center;
@@ -98,10 +100,10 @@ transform: scale(1);
   place-items: center;
   position: relative;
   overflow: visible;
-  background: #f2f2f2;
-  border: 2px solid #bbb;
   border-radius: 10px;
   cursor: pointer;
+  background-color: #6b3e20;
+
 }
 .cell:focus {
   outline: 3px solid #0a7;
@@ -112,6 +114,12 @@ transform: scale(1);
   outline: 4px solid #06a;
   outline-offset: 3px;
   box-shadow: 0 0 0 3px rgba(0,102,204,0.12);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 .controls button {
   display: inline-flex;
