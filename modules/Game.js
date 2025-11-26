@@ -146,7 +146,6 @@ export class Game {
     this.updateHud();
   }
 
-
   handleBoardClick(e) {
     if(!this.state.running) return;
     const cell = e.target.closest('.cell')
