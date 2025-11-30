@@ -227,6 +227,21 @@ transform: scale(1);
   100% { transform: translateY(0) scale(1); }
 }
 
+@media (max-width: 1399px) {
+  .container-2 {
+    position: static;
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .game-rules {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (max-width: 420px) {
   :root { --gap: 4px; }
 
@@ -316,6 +331,12 @@ transform: scale(1);
     gap: 10px;
   }
 }
+
+@media (min-width: 765px) and (max-width:1400px) {
+  .hud {
+    margin-top: 40px;
+  }
+} 
 
 @media (min-width: 768px) {
   :root { --gap: 12px; }
